@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\css\style.css">
+    <title>Trending News</title>
+</head>
+<body class="outer">
+    <h1>Trending News Today</h1>
+    {% for i in range(News|length) %}
+        <div class="inner">
+            <h3>Date: {{ News[i]['date'] }} </h3>
+            <a href="{{ News[i]['link'] }}" target="_blank"> {{ News[i]['title'] }}</a>
+            <p> {{ News[i]['desc'] }} </p>
+        </div>
+    {% endfor %}
+</body>
+</html>
